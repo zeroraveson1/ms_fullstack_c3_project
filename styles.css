@@ -33,6 +33,11 @@ main {
     padding: 20px;
 }
 
+.list-header {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 /* Navigation Header */
 header {
     background: #333;
@@ -119,8 +124,6 @@ header {
     }
 }
 
-
-
 /* Footer */
 /* Ensure footer spans the full width */
 footer {
@@ -151,6 +154,31 @@ footer p {
 h1, h2 {
     color: #444;
 }
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures images stay in one line */
+    justify-content: center;
+    gap: 10px; /* Adds spacing between images */
+    overflow-x: auto; /* Allows horizontal scrolling if necessary */
+    padding: 10px;
+}
+
+.gallery div {
+    flex: 1; /* Allows images to grow evenly */
+    min-width: 100px; /* Ensures images do not shrink too small */
+    max-width: 200px; /* Prevents images from getting too large */
+}
+
+.gallery img {
+    width: 100%; /* Ensures images resize proportionally */
+    height: auto;
+    object-fit: cover; /* Keeps aspect ratio consistent */
+    border-radius: 5px; /* Optional: makes thumbnails look nicer */
+    cursor: pointer; /* Indicates the images are clickable */
+}
+
 
 /* Forms */
 input, textarea {

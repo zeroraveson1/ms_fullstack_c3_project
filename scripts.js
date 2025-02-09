@@ -1,4 +1,4 @@
-// scripts.js - Updated to include project filtering, lightbox effect, and form validation
+// scripts.js - Updated to improve image layout and add lightbox functionality
 
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
@@ -18,39 +18,33 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.style.display = navbar.style.display === "none" ? "flex" : "none";
     });
 
-    // Project filtering functionality
-    function filterProjects(category) {
-        const projects = document.querySelectorAll(".project-item");
-        projects.forEach(project => {
-            if (category === "all" || project.classList.contains(category)) {
-                project.style.display = "block";
-            } else {
-                project.style.display = "none";
-            }
-        });
-    }
-    document.querySelectorAll(".filter-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            filterProjects(this.dataset.filter);
-        });
-    });
-
     // Lightbox effect for project images
     const lightbox = document.createElement("div");
     lightbox.id = "lightbox";
     document.body.appendChild(lightbox);
-    lightbox.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-        lightbox.innerHTML = "";
-    });
     
-    document.querySelectorAll(".project-item img").forEach(img => {
+    lightbox.style.position = "fixed";
+    lightbox.style.top = "0";
+    lightbox.style.left = "0";
+    lightbox.style.width = "100%";
+    lightbox.style.height = "100%";
+    lightbox.style.background = "rgba(0, 0, 0, 0.8)";
+    lightbox.style.display = "none";
+    lightbox.style.alignItems = "center";
+    lightbox.style.justifyContent = "center";
+    lightbox.style.zIndex = "1000";
+    
+    const lightboxImage = document.createElement("img");
+    lightbox.appendChild(lightboxImage);
+    
+    lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    document.querySelectorAll(".gallery img").forEach(img => {
         img.addEventListener("click", e => {
-            lightbox.classList.add("active");
-            const imgElement = document.createElement("img");
-            imgElement.src = e.target.src;
-            lightbox.innerHTML = "";
-            lightbox.appendChild(imgElement);
+            lightboxImage.src = e.target.src;
+            lightbox.style.display = "flex";
         });
     });
 
