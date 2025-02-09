@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    
+    <header role="banner">
+        <button id="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <nav role="navigation" class="container" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+
+    <main role="main">
+        <article role="heading" class="card">
+            <h1>Home</h1>
+            <p>Welcome to the home page!</p>
+        </article>
+
+        <section name="about-me" role="region" class="card">
+            <h2>About Me</h2>
+            <p>This is a section.</p>
+        </section>
+
+        <section name="projects" role="region" class="card">
+            <h2>Projects</h2>
+            <p>This is another section.</p>
+        </section>
+
+        <section name="skills" role="region" class="card">
+            <h2>Skills</h2>
+            <p>This is another section.</p>
+        </section>
+
+        <section name="contact-me" role="form" class="card">
+            <h2>Contact Me</h2>
+            <form action="contact.html" method="post">
+                <label for="name">Name:</label>
+                <br>
+                <input type="text" id="name" name="name" role="textbox">
+                <br>
+
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" id="email" name="email" role="textbox">
+                <br>
+
+                <label for="message">Message:</label>
+                <br>
+                <textarea id="message" name="message" role="textbox"></textarea>
+                <br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 My Website</p>
+    </footer>
+</body>
