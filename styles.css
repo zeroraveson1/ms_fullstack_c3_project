@@ -66,18 +66,17 @@ header nav a:hover {
 
 /* Ensure the hamburger menu is always visible and left-aligned */
 #menu-toggle {
+    position: fixed; /* Keep it fixed in the viewport */
+    top: 15px; /* Always stay at the top */
+    left: 15px; /* Always stay at the left */
     background: none;
     border: none;
     font-size: 2em;
     color: #fff;
     cursor: pointer;
-    position: absolute;
-    left: 20px; /* Left-align the button */
-    top: 50%;
-    transform: translateY(-50%); /* Center it vertically */
-    z-index: 1000;
-    display: block;
+    z-index: 1001; /* Ensure it's above the navigation menu */
 }
+
 
 /* Align menu items and the hamburger button */
 header {
